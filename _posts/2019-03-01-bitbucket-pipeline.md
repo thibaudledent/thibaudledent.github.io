@@ -15,7 +15,7 @@ To speed things up, I decided to [fork the repo](https://bitbucket.org/thibaudle
 
 Having the control of the repository is one thing but I discovered that making a new Maven release of a library is a process in itself (and you have to store passwords, tokens and GPG key somewhere...). I didn't want to remember this process, nor to repeat it manually several times. So I tried to automate it.
 
-Like many code hosting platform, Bitbucket has its own integrated CI/CD feature called [Bitbucket pipelines](https://bitbucket.org/product/features/pipelines). For example, it is quite useful to create one pipeline to run and test your application.
+Like many code hosting platforms, Bitbucket has its own integrated CI/CD feature called [Bitbucket pipelines](https://bitbucket.org/product/features/pipelines). For example, it is quite useful to create one pipeline to run and test your application.
 
 You can maintain your pipelines in a [YAML file](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/bitbucket-pipelines.yml?at=master&fileviewer=file-view-default) called `bitbucket-pipelines.yml`. The challenge was to create a custom pipeline to release a new version of the library to Maven Central!
 
