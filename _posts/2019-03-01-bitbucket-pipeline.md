@@ -13,7 +13,7 @@ To speed things up, I decided to [fork the repo](https://bitbucket.org/thibaudle
 
 # Challenge
 
-Having the control of the repository is one thing but I discovered that making a new Maven release of a library is a process in itself (and you have to store passwords, tokens and GPG key somewhere...). I didn't want to remember this process, nor to repeat it manually several times. So I tried to automate it.
+Having the control of the repository is one thing but I discovered that making a new Maven release of a library is a process in itself (and you have to store passwords, tokens and a GPG key somewhere...). I didn't want to remember this process, nor to repeat it manually several times. So I tried to automate it.
 
 Like many code hosting platforms, Bitbucket has its own integrated CI/CD feature called [Bitbucket pipelines](https://bitbucket.org/product/features/pipelines). For example, it is quite useful to create one pipeline to run and test your application.
 
