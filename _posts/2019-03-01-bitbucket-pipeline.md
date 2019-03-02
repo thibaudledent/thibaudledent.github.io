@@ -3,7 +3,7 @@ title: "Creating a Bitbucket pipeline to automate a Maven release"
 published: true
 ---
 
-It's quite paradoxical to think that my first blog post on GitHub is about Bitbucket... But well, that's the most interesting thing I have to write now and, as a dev, we're curious and ready to try something new, aren't we?
+It's quite paradoxical to think that my first GitHub blog post is about Bitbucket... But well, that's the most interesting thing I have to write now and, as a dev, we're curious and ready to try something new, aren't we?
 
 # Context
 
