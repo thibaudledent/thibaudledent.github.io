@@ -7,13 +7,13 @@ It's quite paradoxical to think that my first blog post on GitHub is about Bitbu
 
 # Context
 
-To put things in context, I recently had to apply changes in a [Java library](https://bitbucket.org/chochos/j8583) that we use on a project at work. Even if the repo maintainer has merged two of my Pull Requests with the main changes, he did not release a new version of his library to Maven Central. The changes were therefore not available for our project. 
+To put things in context, I recently had to apply changes in a [Java library](https://bitbucket.org/chochos/j8583) (hosted on Bitbucket) that we use on a project at work. Even if the repo maintainer has merged two of my Pull Requests with the main changes, he did not release a new version of his library to Maven Central. The changes were therefore not available for our project.
 
 To speed things up, I decided to [fork the repo](https://bitbucket.org/thibaudledent/j8583). In addition to being able to apply our fixes more quickly, we were also able to take control of the library's release cycle.
 
 # Challenge
 
-Having the control of the repository is one thing but I discovered that making a new Maven release of a library is a process in itself (and you have to store passwords, tokens and GPG key somewhere...). I didn't want to remember this process, nor to repeat it manually several times. So I tried to automate it. 
+Having the control of the repository is one thing but I discovered that making a new Maven release of a library is a process in itself (and you have to store passwords, tokens and GPG key somewhere...). I didn't want to remember this process, nor to repeat it manually several times. So I tried to automate it.
 
 Like many code hosting platform, Bitbucket has its own integrated CI/CD feature called [Bitbucket pipelines](https://bitbucket.org/product/features/pipelines). For example, it is quite useful to create one pipeline to run and test your application.
 
@@ -194,7 +194,7 @@ I use the configuration `skipRelease` to enable/disable these plugins. The list 
 ```
 ## Create the Bitbucket pipeline
 
-Now it's time to edit the [bitbucket-pipelines.yml](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/bitbucket-pipelines.yml?at=master&fileviewer=file-view-default) file to automate the Maven release. After a few round trips to StackOverflow, I managed to automatically release the library. 
+Now it's time to edit the [bitbucket-pipelines.yml](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/bitbucket-pipelines.yml?at=master&fileviewer=file-view-default) file to automate the Maven release. After a few round trips to StackOverflow, I managed to automatically release the library.
 
 Here is the code of the custom pipeline, it's quite straightforward: 
 
@@ -241,7 +241,7 @@ In addition, I created a [settings.xml](https://bitbucket.org/thibaudledent/j858
 </settings>
 ```
 
-For this pipeline to work, you need to set up [repository variables](https://confluence.atlassian.com/bitbucket/variables-in-pipelines-794502608.html) (in Bitbucket, go to settings -> pipelines -> repository variables): 
+For this pipeline to work, you need to set up [repository variables](https://confluence.atlassian.com/bitbucket/variables-in-pipelines-794502608.html) (in Bitbucket, go to settings -> pipelines -> repository variables):
 
 Get the local `GPG_SECRET_KEYS`:
 
