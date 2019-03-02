@@ -7,7 +7,7 @@ It's quite paradoxical to think that my first blog post on GitHub is about Bitbu
 
 # Context
 
-To put things in context, I recently had to apply changes in a [Java library](https://bitbucket.org/chochos/j8583) (hosted on Bitbucket) that we use on a project at work. Even if the repo maintainer has merged two of my Pull Requests with the main changes, he did not release a new version of his library to Maven Central. The changes were therefore not available for our project.
+To put things in context, I recently had to apply changes in a [Java library](https://bitbucket.org/chochos/j8583) (hosted to Bitbucket) that we use on a project at work. Even if the repo maintainer has merged two of my Pull Requests with the main changes, he did not release a new version of his library to Maven Central. The changes were therefore not available for our project.
 
 To speed things up, I decided to [fork the repo](https://bitbucket.org/thibaudledent/j8583). In addition to being able to apply our fixes more quickly, we were also able to take control of the library's release cycle.
 
