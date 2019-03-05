@@ -30,13 +30,13 @@ You can maintain your pipelines in a [YAML file](https://bitbucket.org/thibaudle
 
  Make sure you use the correct `groupId` in your `pom.xml`, example:
 
-´´´xml
+```xml
 <groupId>org.bitbucket.thibaudledent.j8583</groupId>
-´´´
+```
 
 Make sure your `pom.xml` (link [here](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/pom.xml?at=master&fileviewer=file-view-default)) includes a *licenses*, *scm*, *distributionManagement*, and *developers* section. Take note of the *snapshotRepository* and the *repository*. Example:
 
-´´´xml
+```xml
 <url>https://bitbucket.org/thibaudledent/j8583</url>
 
 <licenses>
@@ -68,34 +68,34 @@ Make sure your `pom.xml` (link [here](https://bitbucket.org/thibaudledent/j8583/
         <name>Thibaud Ledent</name>
     </developer>
 </developers>
-´´´
+```
 
 ## Create a GPG certificate
 
 Install `gnupg2`:
 
-´´´bash
+```bash
 sudo apt-get install gnupg2
-´´´
+```
 
 Then, you can generate a key:
 
-´´´
+```
 gpg --gen-key
-´´´
+```
 
 
 You should then see your key listed:
 
-´´´
+```
 gpg2 --list-keys
-´´´
+```
 
 And now distribute your public key:
 
-´´´
+```
 gpg --keyserver pgpkeys.uk --send-keys DB85FB2159287141
-´´´
+```
 
 The `--keyserver` parameter identifies the target key server address and `--send-keys` is the `keyid` of the key you want to distribute. You can get your `keyid` by listing the public keys.
 
@@ -107,7 +107,7 @@ If you have 'No route to host', see also this [list of available servers](https:
 
 I use the configuration `skipRelease` to enable/disable these plugins. The list of plugins to add is listed below (example [here](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/pom.xml?at=master&fileviewer=file-view-default)):
 
-´´´xml
+```xml
 <build>
     <plugins>
         <plugin>
@@ -191,7 +191,7 @@ I use the configuration `skipRelease` to enable/disable these plugins. The list 
         </plugin>
     </plugins>
 </build>
-´´´
+```
 
 ## Create the Bitbucket pipeline
 
@@ -199,7 +199,7 @@ Now it's time to edit the [bitbucket-pipelines.yml](https://bitbucket.org/thibau
 
 Here is the code of the custom pipeline, it's quite straightforward: 
 
-´´´bash
+```bash
 image: maven:3.6.0-jdk-8-slim
 
 pipelines:
@@ -215,11 +215,11 @@ pipelines:
             # -V triggers an output of the Maven and Java versions at the beginning of the build
             # -B batch mode makes Maven less verbose
             # -s causes the usage of the local settings with the required credentials
-´´´
+```
 
 In addition, I created a [settings.xml](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/settings.xml?at=master&fileviewer=file-view-default) file: 
 
-´´´
+```
 <settings>
     <servers>
         <server>
@@ -240,21 +240,21 @@ In addition, I created a [settings.xml](https://bitbucket.org/thibaudledent/j858
         </profile>
     </profiles>
 </settings>
-´´´
+```
 
 For this pipeline to work, you need to set up [repository variables](https://confluence.atlassian.com/bitbucket/variables-in-pipelines-794502608.html) (in Bitbucket, go to settings -> pipelines -> repository variables):
 
 Get the local `GPG_SECRET_KEYS`:
 
-´´´
+```
 gpg -a --export-secret-keys email_address_linked_to_your_gpg_key@mail.com | base64
-´´´
+```
 
 Get the `GPG_OWNERTRUST`:
 
-´´´
+```
 gpg --export-ownertrust | base64
-´´´
+```
 
 To get `OSSRH_USER_TOKEN`, go to [Sonatype user token](https://oss.sonatype.org/#profile;User%20Token).
 
@@ -274,13 +274,13 @@ To release to Maven Central, go to [branches](https://bitbucket.org/thibaudleden
 
 After a few minutes, you will then see the artifacts in [search.maven.org](https://search.maven.org/artifact/org.bitbucket.thibaudledent.j8583/j8583/1.13.4/jar). You can use the release in a `pom.xml`:
 
-´´´xml
+```xml
 <dependency>
   <groupId>org.bitbucket.thibaudledent.j8583</groupId>
   <artifactId>j8583</artifactId>
   <version>1.13.4</version>
 </dependency>
-´´´
+```
 
 # Conclusion
 
