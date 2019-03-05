@@ -4,6 +4,8 @@ style: light
 # Jekyll
 kramdown:
   input: GFM
+  hard_wrap: false
+  parse_block_html: true
 
 markdown:
   kramdown
