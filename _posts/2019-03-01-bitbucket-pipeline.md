@@ -80,20 +80,20 @@ sudo apt-get install gnupg2
 
 Then, you can generate a key:
 
-```
+```bash
 gpg --gen-key
 ```
 
 
 You should then see your key listed:
 
-```
+```bash
 gpg2 --list-keys
 ```
 
 And now distribute your public key:
 
-```
+```bash
 gpg --keyserver pgpkeys.uk --send-keys DB85FB2159287141
 ```
 
@@ -167,8 +167,11 @@ I use the configuration `skipRelease` to enable/disable these plugins. The list 
                         <goal>sign</goal>
                     </goals>
                     <configuration>
-                        <!-- Configuration to prevent the 'Signing Prompt' or the 'gpg: signing failed: No such file or directory' error -->
-                        <!-- See https://myshittycode.com/2017/08/07/maven-gpg-plugin-prevent-signing-prompt-or-gpg-signing-failed-no-such-file-or-directory-error/ -->
+                        <!-- Configuration to prevent the 'Signing Prompt' or the  -->
+                        <!-- 'gpg: signing failed: No such file or directory' error -->
+                        <!-- See https://myshittycode.com/2017/08/07/maven-gpg-plugin- -->
+                        <!-- prevent-signing-prompt-or-gpg-signing-failed-no-such-file- -->
+                        <!-- or-directory-error/ -->
                         <gpgArguments>
                             <arg>--pinentry-mode</arg>
                             <arg>loopback</arg>
@@ -185,7 +188,8 @@ I use the configuration `skipRelease` to enable/disable these plugins. The list 
             <configuration>
                 <serverId>ossrh</serverId>
                 <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                <!-- Set this to true and the release will automatically proceed and sync to Central Repository will follow -->
+                <!-- Set this to true and the release will automatically proceed and -->
+                <!-- sync to Central Repository will follow -->
                 <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
         </plugin>
@@ -208,18 +212,23 @@ pipelines:
       - step:
           script:
             - apt-get update && apt-get install -y gpg --no-install-recommends
-            - export GPG_TTY=$(tty) # to fix the 'gpg: signing failed: Inappropriate ioctl for device', see https://github.com/keybase/keybase-issues/issues/2798#issue-205008630
-            - echo $GPG_SECRET_KEYS | base64 --decode | gpg --batch --import # use 'batch' otherwise gpg2 is asking for a passphrase, see https://superuser.com/a/1135950
+            - export GPG_TTY=$(tty) # to fix the 'gpg: signing failed: Inappropriate
+            # ioctl for device', see https://github.com/keybase/keybase-issues/
+            # issues/2798#issue-205008630
+            - echo $GPG_SECRET_KEYS | base64 --decode | gpg --batch --import # use 'batch'
+            # otherwise gpg2 is asking for a passphrase.
+            # See https://superuser.com/a/1135950
             - echo $GPG_OWNERTRUST | base64 --decode | gpg --import-ownertrust
             - mvn -V -B -s settings.xml deploy -DskipRelease=false
-            # -V triggers an output of the Maven and Java versions at the beginning of the build
+            # -V triggers an output of the Maven and Java versions at the beginning 
+            #     of the build
             # -B batch mode makes Maven less verbose
             # -s causes the usage of the local settings with the required credentials
 ```
 
 In addition, I created a [settings.xml](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/settings.xml?at=master&fileviewer=file-view-default) file: 
 
-```
+```xml
 <settings>
     <servers>
         <server>
@@ -246,13 +255,13 @@ For this pipeline to work, you need to set up [repository variables](https://con
 
 Get the local `GPG_SECRET_KEYS`:
 
-```
+```bash
 gpg -a --export-secret-keys email_address_linked_to_your_gpg_key@mail.com | base64
 ```
 
 Get the `GPG_OWNERTRUST`:
 
-```
+```bash
 gpg --export-ownertrust | base64
 ```
 
@@ -260,9 +269,9 @@ To get `OSSRH_USER_TOKEN`, go to [Sonatype user token](https://oss.sonatype.org/
 
 I ended up with the following repository variables:
 
-- `GPG_PASSPHRASE`
 - `OSSRH_USER_TOKEN`
 - `OSSRH_PWD_TOKEN`
+- `GPG_PASSPHRASE`
 - `GPG_SECRET_KEYS`
 - `GPG_OWNERTRUST`
 
