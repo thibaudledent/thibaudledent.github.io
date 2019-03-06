@@ -34,7 +34,7 @@ You can maintain your pipelines in a [YAML file](https://bitbucket.org/thibaudle
 <groupId>org.bitbucket.thibaudledent.j8583</groupId>
 ```
 
-Make sure your `pom.xml` (link [here](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/pom.xml?at=master&fileviewer=file-view-default)) includes a *licenses*, *scm*, *distributionManagement*, and *developers* section. Take note of the *snapshotRepository* and the *repository*. Example:
+Make sure your `pom.xml` (link [here](https://bitbucket.org/thibaudledent/j8583/src/0bdff5d60a2aa9644025da8d0db09f9ba5ff63e2/pom.xml?at=master&fileviewer=file-view-default)) includes a *license*, *scm*, *distributionManagement*, and *developers* section. Take note of the *snapshotRepository* and the *repository*. Example:
 
 ```xml
 <url>https://bitbucket.org/thibaudledent/j8583</url>
@@ -290,7 +290,7 @@ After a few minutes, you will then see the artifacts in [search.maven.org](https
 
 # Conclusion
 
-The part that is the most time consuming is the process around the Maven release (Jira ticket, creation of the GPG key...). Setting up the pipeline only takes a few minutes and, once done, will save you a lot of time with each release!
+The most time-consuming task is the setup of the Maven release (Jira ticket, GPG key...). The pipeline creation only takes a few minutes and, once completed, will save you a lot of time with each release!
 
 # References
 
