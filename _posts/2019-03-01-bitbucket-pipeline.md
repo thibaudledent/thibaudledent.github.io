@@ -169,9 +169,7 @@ I use the configuration `skipRelease` to enable/disable these plugins. The list 
                     <configuration>
                         <!-- Configuration to prevent the 'Signing Prompt' or the  -->
                         <!-- 'gpg: signing failed: No such file or directory' error -->
-                        <!-- See https://myshittycode.com/2017/08/07/maven-gpg-plugin- -->
-                        <!-- prevent-signing-prompt-or-gpg-signing-failed-no-such-file- -->
-                        <!-- or-directory-error/ -->
+                        <!-- See https://myshittycode.com/2017/08/07/maven-gpg-plugin-prevent-signing-prompt-or-gpg-signing-failed-no-such-file-or-directory-error/ -->
                         <gpgArguments>
                             <arg>--pinentry-mode</arg>
                             <arg>loopback</arg>
@@ -213,8 +211,7 @@ pipelines:
           script:
             - apt-get update && apt-get install -y gpg --no-install-recommends
             - export GPG_TTY=$(tty) # to fix the 'gpg: signing failed: Inappropriate
-            # ioctl for device', see https://github.com/keybase/keybase-issues/
-            # issues/2798#issue-205008630
+            # ioctl for device', see https://github.com/keybase/keybase-issues/issues/2798#issue-205008630
             - echo $GPG_SECRET_KEYS | base64 --decode | gpg --batch --import # use 'batch'
             # otherwise gpg2 is asking for a passphrase.
             # See https://superuser.com/a/1135950
@@ -297,7 +294,7 @@ The part that is the most time consuming is the process around the Maven release
 
 # References
 
-- [https://dzone.com/articles/continuous-integration-to-maven-central-for-free](https://dzone.com/articles/continuous-integration-to-maven-central-for-free)
-- [https://bitbucket.org/simpligility/ossrh-pipeline-demo/src/master/](https://bitbucket.org/simpligility/ossrh-pipeline-demo/src/master/)
-- [http://mbcoder.com/publishing-to-maven-central/](http://mbcoder.com/publishing-to-maven-central/)
-- [https://dzone.com/articles/publish-your-artifacts-to-maven-central](https://dzone.com/articles/publish-your-artifacts-to-maven-central)
+* ["How to Publish Your Artifacts to Maven Central" by DZone](https://dzone.com/articles/publish-your-artifacts-to-maven-central)
+* ["Continuous Integration to Maven Central (for Free)" by DZone](https://dzone.com/articles/continuous-integration-to-maven-central-for-free)
+* ["Ossrh Pipeline Demo" by Simpligility](https://bitbucket.org/simpligility/ossrh-pipeline-demo/src/master/)
+* ["Publishing To Maven Central Repository" by MBcoder](http://mbcoder.com/publishing-to-maven-central/)
