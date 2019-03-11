@@ -276,7 +276,9 @@ I ended up with the following repository variables:
 
 To release to Maven Central, go to [branches](https://bitbucket.org/thibaudledent/j8583/branches/) and run the dedicated pipeline:
 
-![https://bitbucket.org/thibaudledent/j8583/raw/ded5f57141cf1680b5debbfe77fa84de3e8f4282/how_to_release.gif](https://bitbucket.org/thibaudledent/j8583/raw/ded5f57141cf1680b5debbfe77fa84de3e8f4282/how_to_release.gif)
+[![how_to_release_thumbnail.gif](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release_thumbnail.gif)](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release.gif)
+
+[Click to enlarge](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release.gif)
 
 After a few minutes, you will then see the artifacts in [search.maven.org](https://search.maven.org/artifact/org.bitbucket.thibaudledent.j8583/j8583/1.13.4/jar). You can use the release in a `pom.xml`:
 
