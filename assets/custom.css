@@ -4,6 +4,11 @@
   padding: 15px;
   border-radius: 3px;
 }
-ul ol {
+
+ul {
+  margin-left: 15px;
+}
+
+ol {
   margin-left: 15px;
 }
