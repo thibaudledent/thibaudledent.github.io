@@ -278,7 +278,7 @@ To release to Maven Central, go to [branches](https://bitbucket.org/thibaudleden
 
 [![how_to_release_thumbnail.gif](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release_thumbnail.gif)](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release.gif)
 
-[Click to enlarge](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release.gif)
+([Click to enlarge](https://github.com/thibaudledent/thibaudledent.github.io/raw/master/_images/how_to_release.gif))
 
 After a few minutes, you will then see the artifacts in [search.maven.org](https://search.maven.org/artifact/org.bitbucket.thibaudledent.j8583/j8583/1.13.4/jar). You can use the release in a `pom.xml`:
 
