@@ -28,16 +28,21 @@ projects:
     # - repo-name
 
 social_media:
+  linkedin: thibaudledent
+  twitter: thibaudledent
   # behance: your_username
   # dribbble: your_username
   # facebook: your_username
-  linkedin: thibaudledent
-  # medium: @your_username
+  # hackerrank: your_username
+  # instagram: your_username
+  # keybase: your_username
+  # medium: your_username
   # stackoverflow: your_user_id
   # telegram: your_username
-  twitter: thibaudledent
-  # youtube: your_username
+  # unsplash: your_username
   # vk: your_username
+  # website: http://your_website_url
+  # youtube: your_username
 
 topics:
   - name: Java
