@@ -18,10 +18,10 @@ default via 123.12.12.12 dev eno123 proto dhcp metric 100
 
 In this example, the interface is `eno123`.
 
-Then, to see messages exchanged with the IP `99.999.999.999` and port `1234`:
+Then, to see messages exchanged with the IP `99.99.99.99` and port `1234`:
 
 ```bash
-ngrep -qxtd eno123 '.' 'host 99.999.999.999 and port 1234'
+ngrep -qxtd eno123 '.' 'host 99.99.99.99 and port 1234'
 ```
 
 Where the `qxtd` is for:
