@@ -3,8 +3,6 @@ title: "Dump binary network messages transferred across the wire"
 published: true
 ---
 
-# Dump binary network messages transferred across the wire
-
 Our project consists in exchanging messages (in binary format) with other systems, sometimes very old. As part of our tests, it became interesting to check the messages exchanged at the network level, before they reached the application level.
 
 We were able to do this very simply with `ngrep` ("network grep"). One interesting feature of `ngrep` is its ability to display the packets it observes in a hexadecimal format, which is more effective for inspecting binary content messages.
