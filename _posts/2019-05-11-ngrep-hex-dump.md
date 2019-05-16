@@ -3,11 +3,11 @@ title: "Hex dump of network messages exchanged across the wire"
 published: true
 ---
 
-Our project consists in exchanging messages (in various formats, including binary) with other systems, sometimes very old. As part of our tests, it became interesting to check the messages exchanged at the network level, before they reached the application level.
+Our project consists in exchanging messages (in various formats, including binary) with other systems, sometimes very old. As part of our tests, it became interesting to check the messages exchanged at the network level, before they reached the application.
 
 We were able to do this very simply with `ngrep` ("network grep"). One interesting feature of `ngrep` is its ability to display the packets it observes in a hexadecimal format, which is more effective for inspecting binary content messages.
 
-First, we need to get the network interface name:
+First, we need to get the network interface name of our machine:
 
 ```bash
 $ ip route show to match 10.10.10.10
@@ -44,5 +44,5 @@ T 2019/05/11 08:52:37.611605 123.12.12.12:1234 -> 99.99.99.99:1234 [A]
 
 # References
 
-- ["ngrep usage | SourceForge"](http://ngrep.sourceforge.net/usage.html)
+- [ngrep usage (SourceForge)](http://ngrep.sourceforge.net/usage.html)
 
