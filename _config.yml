@@ -24,6 +24,7 @@ projects:
   limit: 9
   exclude:
     forks: false
+    archived: true
     projects:
     # - repo-name
 
@@ -36,6 +37,7 @@ social_media:
   # hackerrank: your_username
   # instagram: your_username
   # keybase: your_username
+  # mastodon: your_username
   # medium: your_username
   # stackoverflow: your_user_id
   # telegram: your_username
