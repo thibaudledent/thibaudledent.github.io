@@ -3,7 +3,9 @@ title: "Sort JSON files by attributes"
 published: true
 ---
 
-A bash script to sort JSON files by attributes:
+Sometimes, when you need to compare different JSONs, it is useful to sort them by attribute to have a better diff. It is possible to do this quite simply with the `jq` command. All wrapped in a loop that looks for JSON files in a given folder, and the job is done! (PS: there is a way to simplify this command so that it is only one line long) ;-)
+
+My bash script to sort JSON files by attributes:
 
 ```bash
 #!/bin/bash
@@ -13,8 +15,8 @@ mydir=$1
 count=0
 
 while IFS= read -r -d '' file
-do 
-	(( count++ ))
+do
+    (( count++ ))
     jq -S '.' "$file" > "$file"_sorted;
     mv "$file"_sorted "$file";
 done < <(find "$mydir" -name '*.json' -print0)
