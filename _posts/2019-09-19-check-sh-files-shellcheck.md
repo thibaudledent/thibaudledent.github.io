@@ -1,19 +1,21 @@
 ---
-title: "Verify bash scripts with ShellCheck"
+title: "Analyze and find bugs in your shell scripts with ShellCheck"
 published: true
 ---
 
-A quick and easy way to verify `.sh` scripts in your current folder with Docker and ShellCheck. We will use:
+A quick and easy way to check your `.sh` scripts against bugs within the current folder you are working on with Docker and ShellCheck. The command is a combination of:
 
 * `docker run -it koalaman/shellcheck-alpine /bin/sh`: to run ShellCheck with `/bin/sh` in a Docker container
 * `--rm`: to force Docker to remove the container when the main application finishes
 * `-v $(pwd):/docker-scripts`: to mount the current directory in the folder `docker-scripts` of the container
 * `find /docker-scripts/ -type f -name '*.sh' | xargs shellcheck`: to check all `*.sh` script and check them with `shellcheck`
 
-Here is the command:
+All put together:
 
 ```bash
-docker run --rm -v $(pwd):/docker-scripts -it koalaman/shellcheck-alpine /bin/sh -c "find /docker-scripts/ -type f -name '*.sh' | xargs shellcheck"
+docker run --rm -v $(pwd):/docker-scripts \
+  -it koalaman/shellcheck-alpine \
+  /bin/sh -c "find /docker-scripts/ -type f -name '*.sh' | xargs shellcheck"
 ```
 
 Example of output:
