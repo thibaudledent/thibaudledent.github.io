@@ -8,7 +8,7 @@ A quick and easy way to check your `.sh` scripts against bugs within the current
 * `docker run -it koalaman/shellcheck-alpine /bin/sh`: to run ShellCheck with `/bin/sh` in a Docker container
 * `--rm`: to force Docker to remove the container when the main application finishes
 * `-v $(pwd):/docker-scripts`: to mount the current directory in the folder `docker-scripts` of the container
-* `find /docker-scripts/ -type f -name '*.sh' | xargs shellcheck`: to check all `*.sh` script and check them with `shellcheck`
+* `find /docker-scripts/ -type f -name '*.sh' | xargs shellcheck`: to check all `*.sh` scripts with `shellcheck`
 
 All put together:
 
