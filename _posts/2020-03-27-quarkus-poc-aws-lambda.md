@@ -46,13 +46,13 @@ mvn package -Pnative -Dquarkus.native.container-build=true
 
 ```bash
 docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .
-```
+``
 
 A Docker image is created, you can check its size:
 
 ```bash
 docker images -a | head
-```
+``
 
 It outputs:
 
@@ -105,7 +105,7 @@ java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 
 2. Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
 
-Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello `as handler
+Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello` as handler
 
 ![screenshot_2.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png)
 
@@ -115,6 +115,6 @@ Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello `as handler
 
 # References
 
-* ["Quarkus"](https://quarkus.io/)
-* ["Quarkus – A New Age of Modern Java Frameworks is Here"](https://4comprehension.com/quarkus-a-new-age-of-modern-java-frameworks-is-here/)
-* ["Maven Central - quarkus-maven-plugin"](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin)
+* The official ["Quarkus"](https://quarkus.io/) website
+* ["Quarkus – A New Age of Modern Java Frameworks is Here"](https://4comprehension.com/quarkus-a-new-age-of-modern-java-frameworks-is-here/) (by 4comprehension)
+* ["Maven Central - quarkus-maven-plugin"](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin) for the Maven plugin
