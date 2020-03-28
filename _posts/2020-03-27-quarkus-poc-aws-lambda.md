@@ -40,19 +40,19 @@ In order to build a  native image, you don’t need to have GraalVM configured l
 
 ```bash
 mvn package -Pnative -Dquarkus.native.container-build=true
-``
+```
 
 2. Build the image:
 
 ```bash
 docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .
-``
+```
 
 A Docker image is created, you can check its size:
 
 ```bash
 docker images -a | head
-``
+```
 
 It outputs:
 
