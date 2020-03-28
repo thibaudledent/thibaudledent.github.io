@@ -60,7 +60,6 @@ docker images -a | head
 It outputs:
 
 ```bash
-docker images -a | head
 REPOSITORY                  TAG     IMAGE ID       CREATED           SIZE
 thibaudledent/quarkus-poc   latest  d0d0209d1325   13 seconds ago    155MB
 ```
