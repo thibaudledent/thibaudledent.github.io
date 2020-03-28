@@ -5,11 +5,11 @@ published: true
 
 I just wanted to play with Quarkus and AWS Lambda. I did a little proof of concept in one evening. There's a lot of things to improve of course but it shows that Java has evolved a lot and can start really fast. 
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework. If you want to learn more about Quarkus, please visit its website: https://quarkus.io/.
+This project uses Quarkus, the Supersonic Subatomic Java Framework. If you want to learn more about Quarkus, please visit its website [here](https://quarkus.io/).
 
 # Create the Java project
 
-1. Check the last version of the `quarkus-maven-plugin` on https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin 
+1. Check the last version of the `quarkus-maven-plugin` on [Maven Central - quarkus-maven-plugin](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin)
 2. Create the project using the plugin:
 
 ```bash
@@ -20,26 +20,60 @@ mvn io.quarkus:quarkus-maven-plugin:1.3.0.Final:create \
   -Dpath="/quizz"
 ```
 
-3. `mvn compile quarkus:dev`
-4. Try it out `curl -X GET "localhost:8080/quizz"`
+3. Compile in dev mode:
+
+```bash
+mvn compile quarkus:dev
+```
+
+4. Try it out with `curl`:
+
+```bash
+curl -X GET "localhost:8080/quizz"
+```
 
 # Run a Containerized Native Image
 
 In order to build a  native image, you don’t need to have GraalVM configured locally, Quarkus can use a dedicated containerized version of GraalVM for that:
 
-1. `mvn package -Pnative -Dquarkus.native.container-build=true`
-2. `docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .`
+1. Package the image:
 
-A Docker image is created, you can check its size with `docker images -a | head`:
+```bash
+mvn package -Pnative -Dquarkus.native.container-build=true
+``
 
-``` docker images -a | head
+2. Build the image:
+
+```bash
+docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .
+``
+
+A Docker image is created, you can check its size:
+
+```bash
+docker images -a | head
+``
+
+It outputs:
+
+```bash docker images -a | head
 REPOSITORY                  TAG     IMAGE ID       CREATED           SIZE
 thibaudledent/quarkus-poc   latest  d0d0209d1325   13 seconds ago    155MB
 ```
 
-3. `docker run thibaudledent/quarkus-poc`
+3. Run the image:
 
-Starting time is fast `time docker run thibaudledent/quarkus-poc`:
+```bash
+docker run thibaudledent/quarkus-poc
+```
+
+Starting time is fast. You can check the startup time with:
+
+```bash
+time docker run thibaudledent/quarkus-poc
+```
+
+The logs are:
 
 ```bash
 __  ____  __  _____   ___  __ ____  ______
@@ -63,23 +97,24 @@ java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 ```
 # Deploying the Standalone Jar on AWS Lambda
 
-1. Create a function with Java runtime
+> Note: This step can be improved by using [Quarkus - Amazon Lambda](https://quarkus.io/guides/amazon-lambda) instead.
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" style="zoom:50%;" />
+1. Create a function with Java runtime:
+
+![screenshot_1.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png)
 
 2. Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
 
 Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello `as handler
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png" style="zoom:50%;" />
+![screenshot_2.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png)
 
-3. Test it
+3. Test it:
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" style="zoom:50%;" />
-
+![screenshot_3.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png)
 
 # References
 
 * ["Quarkus"](https://quarkus.io/)
 * ["Quarkus – A New Age of Modern Java Frameworks is Here"](https://4comprehension.com/quarkus-a-new-age-of-modern-java-frameworks-is-here/)
-* ["Maven Central - quarkus-maven-plugin"](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin )
+* ["Maven Central - quarkus-maven-plugin"](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin)
