@@ -1,5 +1,5 @@
 ---
-title: "Uploading a Quarkus project to AWS Lambda"
+title: "Creating and uploading a Quarkus project to AWS Lambda"
 published: true
 ---
 
