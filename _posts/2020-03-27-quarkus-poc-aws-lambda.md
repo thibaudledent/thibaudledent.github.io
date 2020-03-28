@@ -67,7 +67,7 @@ java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 
 <img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" style="zoom:50%;" />
 
-2. Upload the jar
+2. Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
 
 Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello `as handler
 
@@ -76,3 +76,10 @@ Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello `as handler
 3. Test it
 
 <img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" style="zoom:50%;" />
+
+
+# References
+
+* ["Quarkus"](https://quarkus.io/)
+* ["Quarkus – A New Age of Modern Java Frameworks is Here"](https://4comprehension.com/quarkus-a-new-age-of-modern-java-frameworks-is-here/)
+* ["Maven Central - quarkus-maven-plugin"](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin )
