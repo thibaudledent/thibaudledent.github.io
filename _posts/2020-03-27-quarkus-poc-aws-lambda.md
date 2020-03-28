@@ -9,8 +9,11 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework. If you want 
 
 # Create the Java project
 
-1. Check the last version of the `quarkus-maven-plugin` on [Maven Central - quarkus-maven-plugin](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin)
-2. Create the project using the plugin:
+## Check the last version of the plugin
+
+Check the latest version of the `quarkus-maven-plugin` on [Maven Central - quarkus-maven-plugin](https://search.maven.org/artifact/io.quarkus/quarkus-maven-plugin)
+
+## Create the project using the plugin
 
 ```bash
 mvn io.quarkus:quarkus-maven-plugin:1.3.0.Final:create \
@@ -20,13 +23,13 @@ mvn io.quarkus:quarkus-maven-plugin:1.3.0.Final:create \
   -Dpath="/quizz"
 ```
 
-3. Compile in dev mode:
+## Compile in dev mode
 
 ```bash
 mvn compile quarkus:dev
 ```
 
-4. Try it out with `curl`:
+## Try it out with `curl`
 
 ```bash
 curl -X GET "localhost:8080/quizz"
@@ -36,13 +39,13 @@ curl -X GET "localhost:8080/quizz"
 
 In order to build a  native image, you don’t need to have GraalVM configured locally, Quarkus can use a dedicated containerized version of GraalVM for that:
 
-1. Package the image:
+## Package the image
 
 ```bash
 mvn package -Pnative -Dquarkus.native.container-build=true
 ```
 
-2. Build the image:
+## Build the image
 
 ```bash
 docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .
@@ -61,7 +64,7 @@ REPOSITORY                  TAG     IMAGE ID       CREATED           SIZE
 thibaudledent/quarkus-poc   latest  d0d0209d1325   13 seconds ago    155MB
 ```
 
-3. Run the image:
+## Run the image
 
 ```bash
 docker run thibaudledent/quarkus-poc
@@ -87,7 +90,11 @@ __  ____  __  _____   ___  __ ____  ______
 docker run thibaudledent/quarkus-poc  0.03s user 0.02s system 3% cpu 1.669 total
 ```
 
-3. Try it out `docker exec -it $(docker ps | grep thibaudledent | awk '{print $1}') /bin/bash -c "curl -X GET 'localhost:8080/quizz'"`
+## Try it out
+
+```bash
+docker exec -it $(docker ps | grep thibaudledent | awk '{print $1}') /bin/bash -c "curl -X GET 'localhost:8080/quizz'"
+```
 
 # Running a Standalone Jar
 
@@ -95,23 +102,26 @@ docker run thibaudledent/quarkus-poc  0.03s user 0.02s system 3% cpu 1.669 total
 mvn package
 java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 ```
+
 # Deploying the Standalone Jar on AWS Lambda
 
 > Note: This step can be improved by using [Quarkus - Amazon Lambda](https://quarkus.io/guides/amazon-lambda) instead.
 
-1. Create a function with Java runtime:
+## Create a function with Java runtime
 
-![screenshot_1.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png)
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" alt="screenshot_1.png" width="200"/>
 
-2. Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
+## Upload the jar 
+
+Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
 
 Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello` as handler
 
-![screenshot_2.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png)
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png" alt="screenshot_2.png" width="200"/>
 
-3. Test it:
+## Test it
 
-![screenshot_3.png](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png)
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" alt="screenshot_3.png" width="200"/>
 
 # References
 
