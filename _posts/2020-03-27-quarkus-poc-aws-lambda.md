@@ -49,7 +49,7 @@ mvn package -Pnative -Dquarkus.native.container-build=true
 
 ```bash
 docker build -f src/main/docker/Dockerfile.native -t thibaudledent/quarkus-poc .
-````
+```
 
 A Docker image is created, you can check its size:
 
