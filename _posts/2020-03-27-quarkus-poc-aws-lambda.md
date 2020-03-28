@@ -109,7 +109,7 @@ java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 
 ## Create a function with Java runtime
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" alt="screenshot_1.png" width="200"/>
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" alt="screenshot_1.png" width="350"/>
 
 ([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png))
 
@@ -119,13 +119,13 @@ Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `m
 
 Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello` as handler
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png" alt="screenshot_2.png" width="200"/>
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png" alt="screenshot_2.png" width="350"/>
 
 ([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png))
 
 ## Test it
 
-<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" alt="screenshot_3.png" width="200"/>
+<img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" alt="screenshot_3.png" width="350"/>
 
 ([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png))
 
