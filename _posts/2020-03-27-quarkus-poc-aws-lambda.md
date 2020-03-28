@@ -55,7 +55,7 @@ A Docker image is created, you can check its size:
 
 ```bash
 docker images -a | head
-``
+```
 
 It outputs:
 
