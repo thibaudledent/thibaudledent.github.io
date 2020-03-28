@@ -111,6 +111,8 @@ java -jar target/quarkus-poc-1.0-SNAPSHOT-runner.jar
 
 <img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png" alt="screenshot_1.png" width="200"/>
 
+([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_1.png))
+
 ## Upload the jar 
 
 Upload the jar from `target/quarkus-poc-1.0-SNAPSHOT-runner.jar` created with `mvn package`:
@@ -119,9 +121,13 @@ Use `com.github.thibaudledent.quarkus.poc.HelloResource::hello` as handler
 
 <img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png" alt="screenshot_2.png" width="200"/>
 
+([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_2.png))
+
 ## Test it
 
 <img src="https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png" alt="screenshot_3.png" width="200"/>
+
+([Click to enlarge](https://github.com/thibaudledent/quarkus-poc/raw/master/screenshot_3.png))
 
 # References
 
