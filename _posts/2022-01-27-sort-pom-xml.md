@@ -3,11 +3,11 @@ title: "Sort Maven pom.xml files"
 published: true
 ---
 
-I already had an article to sort `json` files. This time, I'm tackling Maven `pom.xml` files!
+I already had an article to sort `json` files. This time, I'm tackling maven `pom.xml` files!
 
-Indeed, it is sometimes interesting to compare plugins and dependencies of two projects (e.g. to see if all plugins are present in a new project, if all configuration are there...). 
+Indeed, it is sometimes interesting to compare plugins and dependencies of two projects (e.g. to see if all plugins are present in a new project, if all configuration are there...). Comparing the `pom.xml` of the projects is one option, and it's easier to do when the `pom`'s are sorted. 
 
-To do this, I found a small maven plugin:
+To sort a `pom.xml`, I found a small maven plugin:
 
 ```bash
 mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort \
