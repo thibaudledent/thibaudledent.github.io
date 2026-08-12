@@ -17,7 +17,12 @@
     {% assign filtered_repos = site.github.public_repositories | sort: sort_order | reverse %}
   {% endif %}
 
-  {% for repository in filtered_repos | limit: site.projects.limit %}
+  {% assign pinned_first = filtered_repos | where: 'name', 'CV' %}
+  {% assign pinned_second = filtered_repos | where: 'name', 'j8583' %}
+  {% assign remaining_repos = filtered_repos | where_exp: 'repo', 'repo.name != "CV"' | where_exp: 'repo', 'repo.name != "j8583"' %}
+  {% assign ordered_repos = pinned_first | concat: pinned_second | concat: remaining_repos %}
+
+  {% for repository in ordered_repos | limit: site.projects.limit %}
     {% unless site.projects.exclude.projects contains repository.name %}
       <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
         {% include repo-card.html %}

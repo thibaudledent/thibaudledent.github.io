@@ -26,11 +26,12 @@ projects:
     forks: false
     archived: true
     projects:
-    # - repo-name
+      - pdf-index
+      - PhotoUploader
 
 social_media:
   linkedin: thibaudledent
-  twitter: thibaudledent
+  x: thibaudledent
   stackoverflow: 9321274
   # behance: your_username
   # dribbble: your_username
