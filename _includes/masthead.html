@@ -47,9 +47,6 @@
         {% endfor %}
       </div>
     {% endif %}
-    <div class="{{ metadata_styles }}">
-      <a href="{{ '/cv/' | relative_url }}" class="btn btn-primary">Download CV</a>
-    </div>
     {% if user.hireable %}
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}

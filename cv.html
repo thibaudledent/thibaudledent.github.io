@@ -5,30 +5,4 @@ description: Freelance senior software engineer and tech lead, available for mis
 permalink: /cv/
 ---
 
-<p class="f4 mb-3">
-  I'm a freelance senior software engineer and tech lead based in Namur, working in Brussels or remote.
-  I have 10+ years of experience building large-scale transactional platforms, including 8 years on
-  high-volume payments at Worldline/Ingenico, where I helped scale processing from 0 to over 7 million
-  transactions a day. I'm currently full-stack tech lead on the European Commission's CBAM platform.
-</p>
-
-<p class="f4 mb-3">
-  I'm available for freelance missions — get in touch at
-  <a href="mailto:thibaudledent@gmail.com">thibaudledent@gmail.com</a>.
-</p>
-
-<p class="f4 text-gray mb-3">
-  Java &middot; Spring Boot &middot; Kafka &middot; Cassandra &middot; PostgreSQL &middot; Kubernetes &middot; AWS &middot; Angular/TypeScript
-</p>
-
-<a href="{{ '/assets/cv.pdf' | relative_url }}"
-   download="Thibaud-Ledent-CV.pdf"
-   class="btn btn-primary">Download CV (PDF)</a>
-
-<div>
-  <a href="{{ '/assets/cv.pdf' | relative_url }}">
-    <img src="{{ '/assets/cv-preview.png' | relative_url }}"
-         alt="First page of Thibaud Ledent's CV"
-         class="border rounded-2 mt-4" style="max-width: 100%; height: auto;">
-  </a>
-</div>
+{% include cv-summary.html %}
