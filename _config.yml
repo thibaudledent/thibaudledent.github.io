@@ -28,6 +28,7 @@ projects:
     projects:
       - pdf-index
       - PhotoUploader
+      - jira-importer
 
 social_media:
   linkedin: thibaudledent
