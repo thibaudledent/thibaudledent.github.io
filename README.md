@@ -1,9 +1,12 @@
 # thibaudledent.github.io
 
-This repository is a personal fork of [github/personal-website](https://github.com/github/personal-website), a Jekyll-based starter template for building a personal developer website hosted on GitHub Pages.
+This site has moved to **[ledent.dev](https://ledent.dev/)**.
 
-For setup instructions, customization options, and general documentation, see the [original repository's README](https://github.com/github/personal-website#readme).
+The repository now only serves redirects:
 
-## Live site
+- `index.html` and `404.html` send every visitor to `https://ledent.dev/`.
+- Each old article URL (`/YYYY/MM/DD/slug/`) redirects to the same path on
+  `ledent.dev`, which in turn redirects to the article under `/writing/`.
 
-👉 **[https://thibaudledent.github.io/](https://thibaudledent.github.io/)**
+`.nojekyll` turns off the Jekyll build; the files are served as they are.
+The previous Jekyll site is in the git history.
